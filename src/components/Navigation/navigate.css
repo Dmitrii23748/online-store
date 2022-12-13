@@ -1,0 +1,7 @@
+.navigate-list{
+    display: flex;
+}
+
+.navigate-item {
+    margin-right: 20px;
+}
