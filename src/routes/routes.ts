@@ -1,7 +1,7 @@
 import { page } from "..";
-import { addMainPage } from "../pages/main/main";
-import { addCartPage } from "../pages/cart/cart";
-import { addErorPage } from "../pages/404/404";
+import { addMainPage } from "../pages/main/main-page";
+import { addCartPage } from "../pages/cart/Cart-page";
+import { addErorPage } from "../pages/404/Not-found-page";
 
 
 export const addRouter = (route: string) => {
