@@ -1,4 +1,4 @@
-const db = {
+export const db = {
   products: [
     {
       id: 1,
