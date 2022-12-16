@@ -1,4 +1,7 @@
+
+
 export const addTotalPrice = () => {
+
     const divPriceBlock = document.createElement('div');
     const divlPrice = document.createElement('div');
     const spanPriceText: HTMLElement = document.createElement('span');
@@ -10,7 +13,7 @@ export const addTotalPrice = () => {
     spanPriceNumber.classList.add('price-block__span-number');
 
     spanPriceText.textContent = 'Cart Total: ';
-    spanPriceNumber.textContent = '100 $';
+    spanPriceNumber.textContent = `100 $`;
 
     divlPrice.append(spanPriceText,spanPriceNumber);
     divPriceBlock.append(divlPrice)

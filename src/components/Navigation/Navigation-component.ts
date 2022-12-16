@@ -12,6 +12,8 @@ export const addNavigate = () => {
     const linkCart: HTMLElement = document.createElement('a');
     const imgLogo: HTMLImageElement = document.createElement('img');
     const imgCart: HTMLImageElement = document.createElement('img');
+    const spanCountProd: HTMLSpanElement = document.createElement('span');
+
 
     divContainer.classList.add('container');
     divNav.classList.add('block-navigate');
@@ -23,6 +25,7 @@ export const addNavigate = () => {
     linkCart.classList.add('navigate-item__link');
     imgLogo.classList.add('navigate-item__logo-img');
     imgCart.classList.add('navigate-item__cart-img');
+    spanCountProd.classList.add('count-prod');
     
 
     linkMain.setAttribute('href','#/');
@@ -30,12 +33,13 @@ export const addNavigate = () => {
     imgLogo.src = 'https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942397__340.jpg';
     imgLogo.alt = 'logo';
     imgCart.src = 'https://cdn.pixabay.com/photo/2016/12/21/16/34/shopping-cart-1923313__340.png';
-    imgCart.alt = 'cart'
+    imgCart.alt = 'cart';
+    spanCountProd.textContent = '3';
     
     linkMain.append(imgLogo);
     linkCart.append(imgCart);
     liMain.append(linkMain);
-    liCart.append(linkCart);
+    liCart.append(linkCart, spanCountProd);
     ul.append(liMain,liCart);
     nav?.append(ul);
     divNav.append(nav);
