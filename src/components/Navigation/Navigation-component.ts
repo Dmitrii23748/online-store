@@ -2,8 +2,8 @@ import { addTotalPrice } from "../Total-price/Total-price";
 
 export const addNavigate = () => {
 
-    const divContainer: HTMLDivElement = document.createElement('div');
-    const divNav: HTMLDivElement = document.createElement('div');
+    // const divContainer: HTMLDivElement = document.createElement('div');
+    // const divNav: HTMLDivElement = document.createElement('div');
     const nav: HTMLElement = document.createElement('nav');
     const ul: HTMLUListElement = document.createElement('ul');
     const liMain: HTMLElement = document.createElement('li');
@@ -15,8 +15,8 @@ export const addNavigate = () => {
     const spanCountProd: HTMLSpanElement = document.createElement('span');
 
 
-    divContainer.classList.add('container');
-    divNav.classList.add('block-navigate');
+    // divContainer.classList.add('container');
+    // divNav.classList.add('block-navigate');
     nav.classList.add('navigate');
     ul.classList.add('navigate-list');
     liMain.classList.add('navigate-item');
@@ -41,9 +41,10 @@ export const addNavigate = () => {
     liMain.append(linkMain);
     liCart.append(linkCart, spanCountProd);
     ul.append(liMain,liCart);
-    nav?.append(ul);
-    divNav.append(nav);
-    const blockPrice = addTotalPrice();
-    divContainer.append(divNav, blockPrice.divPriceBlock);
-    return divContainer;
+    nav.append(ul);
+    return nav;
+    // divNav.append(nav);
+    // const blockPrice = addTotalPrice();
+    // divContainer.append(divNav, blockPrice.divPriceBlock);
+    // return divContainer;
 }

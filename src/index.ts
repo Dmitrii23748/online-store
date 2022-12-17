@@ -1,11 +1,11 @@
 import { addRouter } from "./routes/routes";
-import { addNavigate } from "./components/Navigation/Navigation-component";
+import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
 
 
 export const root = document.querySelector('#root') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
 
-root.append(addNavigate());
+root.append(createBlockNavigation());
 
 addRouter(window.location.hash || '#/');
 
