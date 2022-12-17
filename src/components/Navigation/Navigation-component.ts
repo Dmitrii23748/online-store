@@ -1,9 +1,5 @@
-import { addTotalPrice } from "../Total-price/Total-price";
-
 export const addNavigate = () => {
 
-    // const divContainer: HTMLDivElement = document.createElement('div');
-    // const divNav: HTMLDivElement = document.createElement('div');
     const nav: HTMLElement = document.createElement('nav');
     const ul: HTMLUListElement = document.createElement('ul');
     const liMain: HTMLElement = document.createElement('li');
@@ -14,9 +10,6 @@ export const addNavigate = () => {
     const imgCart: HTMLImageElement = document.createElement('img');
     const spanCountProd: HTMLSpanElement = document.createElement('span');
 
-
-    // divContainer.classList.add('container');
-    // divNav.classList.add('block-navigate');
     nav.classList.add('navigate');
     ul.classList.add('navigate-list');
     liMain.classList.add('navigate-item');
@@ -27,7 +20,6 @@ export const addNavigate = () => {
     imgCart.classList.add('navigate-item__cart-img');
     spanCountProd.classList.add('count-prod');
     
-
     linkMain.setAttribute('href','#/');
     linkCart.setAttribute('href','#/cart');
     imgLogo.src = 'https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942397__340.jpg';
@@ -43,8 +35,4 @@ export const addNavigate = () => {
     ul.append(liMain,liCart);
     nav.append(ul);
     return nav;
-    // divNav.append(nav);
-    // const blockPrice = addTotalPrice();
-    // divContainer.append(divNav, blockPrice.divPriceBlock);
-    // return divContainer;
 }

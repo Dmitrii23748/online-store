@@ -1,6 +1,12 @@
 @import './components/Block-navigation/Block-navigation.css';
 @import './components/Navigation/Navigate.css';
 @import './components/Total-price/Total-price.css';
+@import './components/Block-products/Wrapper-products/Wrapper-products.css';
+@import './components/Block-products/Filters-products/Wrapper-filters/Wrapper-filters.css';
+@import './components/Block-products/Products/All-products-wrapper/All-products-wrapper.css';
+@import './components/Block-products/Products/Sort-products-wrapper/Sort-products-wrapper.css';
+@import './components/Block-products/Products/All-products/All-products.css';
+@import './components/Block-products/Products/Product-card/Product-card.css';
 
 html {
     -webkit-box-sizing: border-box;
@@ -78,7 +84,7 @@ html {
     text-decoration: none;
   }
 
-  #root {
+  .header {
     padding: 20px 0;
     background-color: rgb(214, 250, 250);
   }

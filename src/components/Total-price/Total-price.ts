@@ -1,5 +1,3 @@
-
-
 export const addTotalPrice = () => {
 
     const divPriceBlock = document.createElement('div');
