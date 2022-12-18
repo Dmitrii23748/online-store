@@ -1,7 +1,10 @@
 export const addErorPage = () => {
     const divMain = document.createElement('div');
     const errorPage = document.createElement('h1');
-    errorPage.textContent = '404 NOT FOUND'
+
+    divMain.classList.add('wrapper_404');
+    errorPage.textContent = 'PAGE NOT FOUND (404)';
+
     divMain.append(errorPage);
     return divMain;
 }
