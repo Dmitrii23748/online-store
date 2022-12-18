@@ -1,0 +1,10 @@
+.products-cards {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+	grid-gap: 1em;
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.products-cards.products-cards-big {
+    grid-template-columns:repeat(6, 1fr);
+}
