@@ -1,16 +1,5 @@
-interface IProducts {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    rating: number;
-    stock: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-    images: string[];
-}
+import { addItemCart } from "../../../../utils/main/addItemCart";
+import { IProducts } from "../../../../utils/interface";
 
 export const createCardProduct = (prod: IProducts) => {
    
@@ -65,6 +54,8 @@ export const createCardProduct = (prod: IProducts) => {
     linkProd.append(titleProd, imgProd, listDesc);
     divBtns.append(btnCart,linkDetails);
     divProd.append(linkProd,divBtns);
+
+    btnCart.addEventListener('click', addItemCart);
 
     return divProd
 }
