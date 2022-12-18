@@ -1,0 +1,14 @@
+.price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.price-block__span-text {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.price-block__span-number {
+    font-weight: 600;
+    font-size: 23px;
+}
