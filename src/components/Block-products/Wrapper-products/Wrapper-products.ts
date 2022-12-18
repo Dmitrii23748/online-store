@@ -2,12 +2,13 @@ import { createWrapperFilters } from "../Filters-products/Wrapper-filters/Wrappe
 import { createWrapperAllProducts } from "../Products/All-products-wrapper/All-products-wrapper";
 
 export const createWrapperProducts = () => {
+    
     const divWrapper = document.createElement('div');
     divWrapper.classList.add('wrapper-products');
 
     const wrapperFilters = createWrapperFilters();
     const wrapperAllProducts = createWrapperAllProducts();
 
-    divWrapper.append(wrapperFilters, wrapperAllProducts);
+    divWrapper.append(wrapperFilters, wrapperAllProducts.divWrapperProducts);
     return divWrapper;
 }
