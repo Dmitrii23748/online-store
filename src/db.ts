@@ -1,4 +1,4 @@
-interface IDB {
+export interface IDB {
   products: {
     id: number;
     title: string;

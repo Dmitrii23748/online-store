@@ -1,4 +1,4 @@
-export const addErorPage = () => {
+export const addErrorPage = () => {
     const divMain = document.createElement('div');
     const errorPage = document.createElement('h1');
 
