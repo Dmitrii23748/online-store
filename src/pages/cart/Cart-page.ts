@@ -1,54 +1,19 @@
-import { IDB, db } from "../../db";
+import { checkEmpty } from "../../utils/cart/checkEmpty";
+import { addItemList } from "../../utils/cart/addItemList";
+import { IDB, IProducts } from "../../utils/interface";
 
-export const addCartPage = () => {
-  const wrapperCart = document.createElement('div');
+export const addCartPage = (): HTMLElement => {
+  const wrapperCart: HTMLElement = document.createElement('div');
 
-  if (checkEmpty()) {
-    wrapperCart.textContent = 'Cart is empty'
+  const items: Array<IProducts> = JSON.parse(window.localStorage.getItem('itemList') as string);
+  if (checkEmpty(items)) {
+    wrapperCart.textContent = 'Cart is empty';
+    return wrapperCart;
   }
 
-  const itemList = document.createElement('section');
-  const checkout = document.createElement('aside');
-
-  itemList.append(addItemList())
+  const itemList: HTMLElement = document.createElement('section');
+  const checkout: HTMLElement = document.createElement('aside');
+  itemList.append(addItemList(items));
+  wrapperCart.append(itemList)
   return wrapperCart;
 }
-
-//Проверяет внешнее хранилище на предмет отложенных вещей
-const checkEmpty = () => {
-  let num = Math.random();
-  return num >= 0.5 ? true : false
-} 
-
-//Наполняем корзину итемами
-const addItemList = () => {
-  const items = getItems(db);
-  const cartInfo = document.createElement('div');
-  const cartInner = document.createElement('div');
-
-  addCartInfo(cartInfo, items)
-}
-
-//Получаем список отложенных итемов
-const getItems = (path: IDB) => {
-  const length = path.total > 3 ? 3 : path.total;
-  const items = [];
-  for (let i = 0; i < length; i++) {
-    items.push(path.products[i]);
-  }
-  return items;
-}
-
-const addCartInfo = (node: HTMLElement, items) => {
-  const cartTitle: HTMLElement = document.createElement('span');
-  const controllers = document.createElement('div');
-
-  cartTitle.innerText = 'Products In Cart';
-  addControlers();
-
-  function addControlers() {
-    const itemPerPage = document.createElement('span');
-    itemPerPage.innerText = `Items: ${items.length}`
-  }
-}
-
