@@ -1,3 +1,23 @@
 .products-sort {
     padding: 30px 0;
 }
+
+.btn-small,
+.btn-big {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: rgb(164, 73, 249);
+    color: rgb(251, 246, 241);
+    transition: all .3s ease-in;
+}
+
+.btn-small:hover,
+.btn-big:hover {
+    background-color: rgb(38, 7, 66);
+    transform: scale(1.05);
+}
+
+.btn-small {
+    margin-right: 10px;
+}

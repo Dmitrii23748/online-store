@@ -1,21 +1,27 @@
 
 export const createSortWrapper = () => {
 
-    const divSortWrapper = document.createElement('div');
+    const divSortWrapper: HTMLDivElement = document.createElement('div');
     divSortWrapper.classList.add('products-sort');
 
-    const btnSmall = document.createElement('button');
-    const btnBig = document.createElement('button');
+    const divBlockSmallBig: HTMLDivElement = document.createElement('div');
+    divBlockSmallBig.classList.add('products-sort__small-big');
+
+    const btnSmall: HTMLAnchorElement = document.createElement('a');
+    const btnBig: HTMLAnchorElement = document.createElement('a');
 
     btnSmall.classList.add('btn-small');
     btnBig.classList.add('btn-big');
 
+    btnSmall.href = '#/?table=small';
+    btnBig.href = '#/?table=big';
+
     btnSmall.textContent = 'SMALL';
     btnBig.textContent = 'BIG';
 
-    divSortWrapper.textContent = 'Блок  различные виды сортировки';
+    divBlockSmallBig.append(btnSmall, btnBig)
 
-    divSortWrapper.append(btnSmall, btnBig)
+    divSortWrapper.append(divBlockSmallBig);
 
     return  {
         divSortWrapper,
