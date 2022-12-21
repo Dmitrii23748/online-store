@@ -1,5 +1,6 @@
 import { db } from "../../db";
 import { IProducts } from "../interface";
+import { updateItemsCount } from "../UpdateItemsCount";
 
 export const addItemCart = (event: Event) => {
   const target = event.target as HTMLElement;
@@ -25,4 +26,5 @@ function pushItem(item: IProducts): void {
     currentItems.push(item)
     window.localStorage.setItem('itemList', JSON.stringify(currentItems));
   }
+  updateItemsCount();
 }
