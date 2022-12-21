@@ -1,6 +1,7 @@
 import { checkEmpty } from "../../utils/cart/checkEmpty";
 import { addCart } from "../../utils/cart/addCart";
-import { IDB, IProducts } from "../../utils/interface";
+import { IProducts } from "../../utils/interface";
+import { addCheckout } from "../../utils/cart/addCheckout";
 
 export const addCartPage = (): HTMLElement => {
   const wrapperCart: HTMLElement = document.createElement('div');
@@ -19,7 +20,8 @@ export const addCartPage = (): HTMLElement => {
   checkout.classList.add('checkout');
 
   itemList.append(...addCart(items));
-
-  wrapperCart.append(itemList)
+  checkout.append(...addCheckout(items));
+  
+  wrapperCart.append(itemList, checkout)
   return wrapperCart;
 }
