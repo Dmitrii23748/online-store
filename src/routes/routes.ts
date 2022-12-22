@@ -19,6 +19,8 @@ export const addRouter = (route: string) => {
             return page.append(addMainPage());
         case '#/?table=big':
             return page.append(addMainPage());
+        // case '#/?table=big':
+        //     return page.append(addMainPage());
         case '#/cart':
             return page.append(addCartPage());
         case `#/products/${idHref}`:

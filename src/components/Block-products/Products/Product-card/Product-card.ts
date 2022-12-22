@@ -37,17 +37,17 @@ export const createCardProduct = (prod: IProducts) => {
     linkDetails.classList.add('products-btn__item');
 
     linkProd.setAttribute('href', `#/products/${prod.id}`);
-    imgProd.src = prod.thumbnail;
+    imgProd.src = `${prod.thumbnail}`;
     imgProd.alt = 'card-product';
     linkDetails.setAttribute('href', `#/products/${prod.id}`);
 
-    liDescCategory.textContent = `Category: ${prod.category}`;
-    liDescBrand.textContent = `Brand: ${prod.brand}`;
+    liDescCategory.textContent = `Category: ${prod.category.toUpperCase()}`;
+    liDescBrand.textContent = `Brand: ${prod.brand.toUpperCase()}`;
     liDescPrice.textContent = `Price: ${prod.price}$`;
     liDescDiscount.textContent = `Discount: ${prod.discountPercentage}%`;
     liDescRating.textContent = `Rating: ${prod.rating}`;
     liDescStock.textContent = `Stock: ${prod.stock}`;
-    titleProd.textContent = prod.brand;
+    titleProd.textContent = prod.title.toUpperCase();
     btnCart.textContent = 'Add Cart';
     linkDetails.textContent = 'Details';
     

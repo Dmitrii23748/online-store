@@ -1,3 +1,6 @@
+import { db } from "../../db";
+import { createAllProducts } from "../Block-products/Products/All-products/All-products";
+
 export const addNavigate = () => {
 
     const nav: HTMLElement = document.createElement('nav');
@@ -34,5 +37,12 @@ export const addNavigate = () => {
     liCart.append(linkCart, spanCountProd);
     ul.append(liMain,liCart);
     nav.append(ul);
+
+    liMain.addEventListener('click', () => {
+        if(localStorage.getItem('valueInput')) {
+            localStorage.removeItem('valueInput');
+            window.location.reload();
+        }
+    })
     return nav;
 }

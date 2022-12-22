@@ -5,7 +5,11 @@ import { createBlockNavigation } from "./components/Block-navigation/Block-navig
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
 
+
+
 rootHeader.append(createBlockNavigation());
+
+
 
 // addRouter(window.location.hash || '#/');
 
@@ -20,3 +24,4 @@ window.addEventListener('load', () => {
         window.location.hash = '#/';
     }  
 });
+

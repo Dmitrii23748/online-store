@@ -8,7 +8,7 @@
     border-radius: 10px;
     background-color: rgb(255, 235, 205);
     /* max-width: 252px; */
-    max-height: 220px;
+    height: 220px;
     overflow: hidden;
     transition: all .3s ease-out;
   }
@@ -27,6 +27,7 @@
 
   .products-card__link {
     position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }
@@ -53,12 +54,14 @@
 
   .products-btns {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 0;
     left: 0;
   }
 
   .products-btn__item {
+    position: relative;
+    z-index: 1;
     display: inline-block;
     padding: 5px;
     background-color: rgb(138, 43, 226);
