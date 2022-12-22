@@ -2,6 +2,9 @@ import { addRouter } from "./routes/routes";
 import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
 import { updateItemsCount } from "./utils/UpdateItemsCount";
 
+//CssImport
+import './style.scss'
+
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
 
@@ -19,7 +22,3 @@ window.addEventListener('load', () => {
     };
     updateItemsCount();
 });
-
-document.addEventListener('onload', () => {
-  
-})
