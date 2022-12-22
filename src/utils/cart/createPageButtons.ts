@@ -9,10 +9,10 @@ export function createPageButtons(items: Array<IProducts>): HTMLElement {
   pagTitle.innerText = 'Page:'
 
   const buttonLeft = document.createElement('button');
-  buttonLeft.classList.add('pagination__controller__btn-left')
+  buttonLeft.classList.add('pagination__controller__btn_left')
 
   const buttonRight = document.createElement('button');
-  buttonRight.classList.add('pagination__controller__btn-left')
+  buttonRight.classList.add('pagination__controller__btn_right')
 
   const pageCount = document.createElement('span');
   pageCount.classList.add('pagination__controller__pages');

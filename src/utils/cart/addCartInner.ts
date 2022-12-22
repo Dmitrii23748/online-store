@@ -4,7 +4,7 @@ export function addCartInner(node: HTMLElement, items: Array<IProducts>):void  {
 
   for (let i = 0; i < length; i++) {
     const item = document.createElement('div');
-    item.classList.add('Item_', (i+1).toString());
+    item.classList.add('item');
     
     const num: HTMLElement = createNum(i);
 
@@ -21,17 +21,17 @@ export function addCartInner(node: HTMLElement, items: Array<IProducts>):void  {
 
 function createNum(i: number): HTMLElement {
   const num = document.createElement('div');
-  num.classList.add('item_number');
+  num.classList.add('item__number');
   num.innerText = (i+1).toString();
   return num;
 }
 
 function createImage(i: number, items: Array<IProducts>): HTMLElement {
     const img = document.createElement('div');
-    img.classList.add('item_img-container');
+    img.classList.add('item__img-container');
 
     const img_src = document.createElement('img');
-    img_src.classList.add('item_image');
+    img_src.classList.add('item__image');
 
     img_src.src = items[i].images[0];
     img_src.alt = items[i].title;

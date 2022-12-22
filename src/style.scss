@@ -5,6 +5,7 @@
 @import 'sass/layouts/filters-wrapper';
 @import 'sass/layouts/products-wrapper';
 @import 'sass/layouts/sort-products-wrapper';
+@import 'sass/layouts/cart-wrappers';
 
 //Main components
 @import 'sass/components/all-products';
@@ -12,3 +13,6 @@
 @import 'sass/components/navigate';
 @import 'sass/components/product-card';
 @import 'sass/components/total-price';
+
+//Pages
+@import 'sass/pages/cart.scss';
