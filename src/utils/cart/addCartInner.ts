@@ -79,10 +79,10 @@ function createControls(i: number, items: Array<IProducts>): HTMLElement {
   btnsWrapper.classList.add('item__controls__buttons');
 
   let leftBtn = document.createElement('button');
-  leftBtn.classList.add('item__controls__button_left');
+  leftBtn.classList.add('item__controls__buttons_left');
   
   let rightBtn = document.createElement('button');
-  rightBtn.classList.add('item__controls__button_right');
+  rightBtn.classList.add('item__controls__buttons_right');
 
   let itemsCount = document.createElement('span');
   itemsCount.classList.add('item__controls__count');
