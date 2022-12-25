@@ -1,5 +1,4 @@
-import { db } from "../../db";
-import { createAllProducts } from "../Block-products/Products/All-products/All-products";
+import { createWrapperAllProducts } from "../Block-products/Products/All-products-wrapper/All-products-wrapper";
 
 export const addNavigate = () => {
 
@@ -38,11 +37,10 @@ export const addNavigate = () => {
     ul.append(liMain,liCart);
     nav.append(ul);
 
-    liMain.addEventListener('click', () => {
-        if(localStorage.getItem('valueInput')) {
-            localStorage.removeItem('valueInput');
-            window.location.reload();
-        }
-    })
+    linkMain.addEventListener('click', () => {
+        localStorage.clear();
+        createWrapperAllProducts();
+        // window.location.reload();
+    });
     return nav;
 }

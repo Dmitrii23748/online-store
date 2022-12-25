@@ -6,7 +6,6 @@ export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
 
 
-
 rootHeader.append(createBlockNavigation());
 
 

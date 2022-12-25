@@ -7,6 +7,7 @@
 @import './components/Block-products/Products/Sort-products-wrapper/Sort-products-wrapper.css';
 @import './components/Block-products/Products/All-products/All-products.css';
 @import './components/Block-products/Products/Product-card/Product-card.css';
+@import './components//Block-products/Products/Description-prod/Description-prod.css';
 
 html {
     -webkit-box-sizing: border-box;
@@ -98,3 +99,12 @@ html {
   .none {
     display: none;
   }
+
+
+
+
+
+
+
+
+  

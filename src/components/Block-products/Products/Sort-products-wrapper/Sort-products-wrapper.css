@@ -1,5 +1,8 @@
 .products-sort {
     padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .btn-small,
@@ -20,4 +23,24 @@
 
 .btn-small {
     margin-right: 10px;
+}
+
+.block-search, .products-sort__small-big,
+.block__count-prod, .block-select {
+    margin: 0 15px;
+}
+
+.search {
+    outline: none;
+    border: 2px solid rgb(164, 73, 249);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.sort {
+    outline: none;
+    border: 2px solid rgb(164, 73, 249);
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
 }
