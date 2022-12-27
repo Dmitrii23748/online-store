@@ -4,7 +4,7 @@ export function checkItemInStorage(ID: number): boolean {
   const currentItems = JSON.parse(window.localStorage.getItem('itemList') as string);
   let statement: boolean = false;
   currentItems.forEach((element: IProducts) => {
-    if (element.id === ID + 1) {
+    if (element.id === ID) {
       statement = true;
     }
   });

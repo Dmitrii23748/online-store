@@ -8,7 +8,7 @@ import { changeButton } from "./changeButton";
 export const addItemCart = (event: Event) => {
   const target = event.target as HTMLElement;
   const id: number = calculateID(target);
-  const item: IProducts = db.products[id];
+  const item: IProducts = db.products[id - 1];
 
   if (checkItemInStorage(id)) {
     deleteFromStorage(id);
@@ -22,8 +22,7 @@ function calculateID(el: HTMLElement): number {
   const sibling = el.parentNode?.previousSibling as HTMLAnchorElement;
   const idNode = sibling.querySelector('.card-desc__item_ID') as HTMLElement;
   const id = +idNode.innerText;
-  console.log(id)
-  return id - 1;
+  return id;
 }
 
 function pushInStorage(item: IProducts): void {

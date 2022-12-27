@@ -6,7 +6,6 @@ export function setButtonText(id: number): string {
   currentItems.forEach((element: IProducts) => {
     idArray.push(element.id);
   });
-
   if (idArray.includes(id)) return 'Remove from cart';
   else return 'Add to cart';
 }
