@@ -2,20 +2,20 @@ import { IProducts } from "../interface";
 
 export function createPageButtons(items: Array<IProducts>): HTMLElement {
   const paginator = document.createElement('div');
-  paginator.classList.add('paginator');
+  paginator.classList.add('pagination__controller');
 
   const pagTitle = document.createElement('span');
-  pagTitle.classList.add('paginator_title')
+  pagTitle.classList.add('pagination__controller__title')
   pagTitle.innerText = 'Page:'
 
   const buttonLeft = document.createElement('button');
-  buttonLeft.classList.add('paginator_btn-left')
+  buttonLeft.classList.add('pagination__controller__btn_left')
 
   const buttonRight = document.createElement('button');
-  buttonRight.classList.add('paginator_btn-right')
+  buttonRight.classList.add('pagination__controller__btn_right')
 
   const pageCount = document.createElement('span');
-  pageCount.classList.add('paginator_page-count');
+  pageCount.classList.add('pagination__controller__pages');
   pageCount.innerText = `1`
 
   paginator.append(pagTitle, buttonLeft, pageCount, buttonRight);

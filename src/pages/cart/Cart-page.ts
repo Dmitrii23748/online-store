@@ -1,9 +1,11 @@
 import { checkEmpty } from "../../utils/cart/checkEmpty";
-import { addItemList } from "../../utils/cart/addItemList";
-import { IDB, IProducts } from "../../utils/interface";
+import { addCart } from "../../utils/cart/addCart";
+import { IProducts } from "../../utils/interface";
+import { addCheckout } from "../../utils/cart/addCheckout";
 
 export const addCartPage = (): HTMLElement => {
   const wrapperCart: HTMLElement = document.createElement('div');
+  wrapperCart.classList.add('wrapper_cart')
 
   const items: Array<IProducts> = JSON.parse(window.localStorage.getItem('itemList') as string);
   if (checkEmpty(items)) {
@@ -13,7 +15,13 @@ export const addCartPage = (): HTMLElement => {
 
   const itemList: HTMLElement = document.createElement('section');
   const checkout: HTMLElement = document.createElement('aside');
-  itemList.append(addItemList(items));
-  wrapperCart.append(itemList)
+
+  itemList.classList.add('item-list');
+  checkout.classList.add('checkout');
+
+  itemList.append(...addCart(items));
+  checkout.append(...addCheckout(items));
+  
+  wrapperCart.append(itemList, checkout)
   return wrapperCart;
 }

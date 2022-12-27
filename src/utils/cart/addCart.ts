@@ -2,11 +2,14 @@ import { addCartInfo } from "./addCartInfo";
 import { IDB, IProducts } from "../interface";
 import { addCartInner } from "./addCartInner";
 
-export const addItemList = (items: Array<IProducts>): Node => {
+export const addCart = (items: Array<IProducts>): Array<HTMLElement> => {
   const cartInfo: HTMLElement = document.createElement('div');
   const cartInner: HTMLElement = document.createElement('div');
+  cartInfo.classList.add('cart-info')
+  cartInner.classList.add('cart-items')
 
   addCartInfo(cartInfo, items);
   addCartInner(cartInner, items);
-  return cartInfo 
+  
+  return [cartInfo, cartInner];
 }

@@ -1,6 +1,8 @@
 import { createWrapperProducts } from "../../components/Block-products/Wrapper-products/Wrapper-products";
+import { checkEmptyStorage } from "../../utils/main/checkEmptyStorage";
 
 export const addMainPage = () => {
+    checkEmptyStorage();
     const sectionMain = document.createElement('section');
     const containerMain = document.createElement('div');
 

@@ -1,5 +1,9 @@
 import { addRouter } from "./routes/routes";
 import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
+import { updateItemsCount } from "./utils/updateItemsCount";
+
+//CssImport
+import './style.scss'
 
 
 export const rootHeader = document.querySelector('.header') as HTMLElement;
@@ -17,13 +21,9 @@ window.addEventListener('hashchange', () => {
     addRouter(hash); 
 });
 
-window.addEventListener('load', () => {
-    addRouter('#/');    
-    if(window.location.hash === '') {
-        window.location.hash = '#/';
-    }  
+window.addEventListener('DOMContentLoaded', () => {    
+    if(window.location.pathname === '/') {
+        window.location.href = '#/';
+    };
+    updateItemsCount();
 });
-
-
-
-

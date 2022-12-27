@@ -100,7 +100,7 @@ module.exports = ({ development }) => {
       ],
     },
     plugins: [
-      new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
+      new MiniCssExtractPlugin({ filename: '[name].css' }),
       ...getHtmlPlugins(pages),
       new CopyPlugin({
         patterns: [
