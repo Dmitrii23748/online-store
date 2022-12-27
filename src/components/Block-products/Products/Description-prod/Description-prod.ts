@@ -25,6 +25,7 @@ export const DescriptionProd = (item: IProducts) => {
     const liCharacterItem4: HTMLLIElement = document.createElement('li');
     const liCharacterItem5: HTMLLIElement = document.createElement('li');
     const liCharacterItem6: HTMLLIElement = document.createElement('li');
+    const liDescID: HTMLLIElement = document.createElement('li');
     const divBtns: HTMLDivElement = document.createElement('div');
     const spanPrice: HTMLSpanElement = document.createElement('span');
     const btnAddCart: HTMLButtonElement = document.createElement('button');
@@ -63,6 +64,7 @@ export const DescriptionProd = (item: IProducts) => {
     liCharacterItem4.classList.add('description__character-item');
     liCharacterItem5.classList.add('description__character-item');
     liCharacterItem6.classList.add('description__character-item');
+    liDescID.classList.add('card-desc__item_ID');
     divBtns.classList.add('description__btns');
     spanPrice.classList.add('description__btns-price');
     spanPrice.classList.add('desc-btn');
@@ -87,6 +89,8 @@ export const DescriptionProd = (item: IProducts) => {
     liCharacterItem4.textContent = `Stock: ${item.stock}`;
     liCharacterItem5.textContent = `Brand: ${item.brand}`;
     liCharacterItem6.textContent = `Category: ${item.category}`;
+    liDescID.textContent = `${item.id}`;
+    
     spanPrice.textContent = `${item.price} $`;
     btnAddCart.textContent = 'Add to cart';
     btnBuyNow.textContent = 'Buy Now';
@@ -95,7 +99,7 @@ export const DescriptionProd = (item: IProducts) => {
      // items append
     divBoxMain.append(divBoxMainImg);
     divBox.append(divBoxItems, divBoxMain);
-    ulCharacterList.append(liCharacterItem1, liCharacterItem2, liCharacterItem3, liCharacterItem4, liCharacterItem5, liCharacterItem6);
+    ulCharacterList.append(liCharacterItem1, liCharacterItem2, liCharacterItem3, liCharacterItem4, liCharacterItem5, liCharacterItem6, liDescID);
     divBtns.append(spanPrice,btnAddCart,btnBuyNow);
     divBlock.append(divBox, ulCharacterList,divBtns);
 
