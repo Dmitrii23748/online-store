@@ -1,6 +1,6 @@
 import { addRouter } from "./routes/routes";
 import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
-import { updateItemsCount } from "./utils/UpdateItemsCount";
+import { updateItemsCount } from "./utils/updateItemsCount";
 
 //CssImport
 import './style.scss'
@@ -16,7 +16,7 @@ window.addEventListener('hashchange', () => {
     addRouter(hash);
 });
 
-window.addEventListener('load', () => {    
+window.addEventListener('DOMContentLoaded', () => {    
     if(window.location.pathname === '/') {
         window.location.href = '#/';
     };

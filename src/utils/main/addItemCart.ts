@@ -1,13 +1,21 @@
 import { db } from "../../db";
+import { checkItemInStorage } from "../cart/checkItemInStorage";
+import { deleteFromStorage } from "../cart/deleteFromStorage";
 import { IProducts } from "../interface";
-import { updateItemsCount } from "../UpdateItemsCount";
+import { updateItemsCount } from "../updateItemsCount";
+import { changeButton } from "./changeButton";
 
 export const addItemCart = (event: Event) => {
   const target = event.target as HTMLElement;
-  const id = calculateID(target);
+  const id: number = calculateID(target);
   const item: IProducts = db.products[id];
 
-  pushItem(item)
+  if (checkItemInStorage(id)) {
+    deleteFromStorage(id)
+  } else {
+    pushItem(item);
+  }
+  changeButton(target, id);
 }
 
 function calculateID(el: HTMLElement): number {
