@@ -6,12 +6,10 @@ export const createSortWrapper = () => {
 
     const divBlockSmallBig: HTMLDivElement = document.createElement('div');
     divBlockSmallBig.classList.add('products-sort__small-big');
-    const btnSmall: HTMLAnchorElement = document.createElement('a');
-    const btnBig: HTMLAnchorElement = document.createElement('a');
+    const btnSmall: HTMLButtonElement = document.createElement('button');
+    const btnBig: HTMLButtonElement = document.createElement('button');
     btnSmall.classList.add('btn-small');
     btnBig.classList.add('btn-big');
-    btnSmall.href = '#/?table=small';
-    btnBig.href = '#/?table=big';
     btnSmall.textContent = 'SMALL';
     btnBig.textContent = 'BIG';
 
@@ -31,11 +29,11 @@ export const createSortWrapper = () => {
     const option4: HTMLOptionElement = document.createElement('option');
     const option5: HTMLOptionElement = document.createElement('option');
     select.classList.add('sort')
-    option1.value = '1';
-    option2.value = '2';
-    option3.value = '3';
-    option4.value = '4';
-    option5.value = '5';
+    option1.value = 'noSort';
+    option2.value = 'upPrice';
+    option3.value = 'downPrice';
+    option4.value = 'downABC';
+    option5.value = 'upABC';
     option1.textContent = 'Без сортировки';
     option2.textContent = 'От меньшей price к большей';
     option3.textContent = 'От большей price к меньшей';

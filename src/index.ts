@@ -18,9 +18,12 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
-    addRouter(localStorage.getItem('hash') || '#/');    
+    addRouter('#/');    
     if(window.location.hash === '') {
         window.location.hash = '#/';
     }  
 });
+
+
+
 

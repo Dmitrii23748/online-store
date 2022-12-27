@@ -1,6 +1,6 @@
 import { addItemCart } from "../../../../utils/main/addItemCart";
 import { IProducts } from "../../../../utils/interface";
-import { addClassListDesc } from "../../../../utils/addUrlParams";
+import { addClassListElem } from "../../../../utils/addUrlParams";
 
 export const createCardProduct = (prod: IProducts) => {
    
@@ -58,7 +58,7 @@ export const createCardProduct = (prod: IProducts) => {
 
     btnCart.addEventListener('click', addItemCart);
 
-    addClassListDesc(listDesc)
+    addClassListElem(listDesc)
 
-    return divProd
+    return  divProd
 }

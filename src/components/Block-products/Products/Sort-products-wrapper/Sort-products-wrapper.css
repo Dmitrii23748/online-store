@@ -12,6 +12,7 @@
     border-radius: 7px;
     background-color: rgb(164, 73, 249);
     color: rgb(251, 246, 241);
+    cursor: pointer;
     transition: all .3s ease-in;
 }
 

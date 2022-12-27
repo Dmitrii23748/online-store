@@ -7,9 +7,8 @@ export const createAllProducts = (db: IProducts[]) => {
     const div = document.createElement('div');
     div.classList.add('products-cards');
     const products = db;
-   
     products.forEach(item => {
-        const cardProduct = createCardProduct(item);
+        let cardProduct = createCardProduct(item);        
         div.append(cardProduct);
     });
     

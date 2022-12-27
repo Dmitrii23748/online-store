@@ -6,14 +6,8 @@ export const createArr = () => {
     return arr;
 }
 
-// export const createArr = async () => {
-//     const res = await fetch('../../db-copy.json');
-//     const data = await res.json();
-//     return data.products;
-// }
-
 export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arrDB:IProducts[], htmlAddProdFunc: any, htmlElemSort: any) => {
-    localStorage.setItem('valueInput', value);
+    localStorage.setItem('valueInput',`${value}`);
     let strStorage = localStorage.getItem('valueInput')!.toLowerCase();
     htmlElemProducts.innerHTML = '';
     let arrLocal: IProducts[] = [];
@@ -31,7 +25,7 @@ export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arr
                 
         } 
     }); 
-    
+
     localStorage.setItem('arrSearch', JSON.stringify(arrLocal))
     
 
@@ -52,12 +46,12 @@ export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElem
         arrDB = createArr();
     }
    
-    if(sortOptionValue === '1') {      
+    if(sortOptionValue === 'noSort') {      
         arrDB.forEach(item => {
             htmlElemProducts.append(htmlAddProdFunc(item));
         })
     };
-    if(sortOptionValue === '2') {
+    if(sortOptionValue === 'upPrice') {
         const sorArr = arrDB.sort((a: IProducts, b: IProducts): number => {
             return a.price - b.price
         });
@@ -66,7 +60,7 @@ export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElem
         })
     };
 
-    if(sortOptionValue === '3') {
+    if(sortOptionValue === 'downPrice') {
         const sorArr = arrDB.sort((a: IProducts, b: IProducts): number => {
             return b.price - a.price
         });
@@ -75,7 +69,7 @@ export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElem
         })
     }
 
-    if(sortOptionValue === '4') {
+    if(sortOptionValue === 'downABC') {
         const sorArr = arrDB.sort((a: IProducts, b: IProducts): number => {
             if (a.brand.toLowerCase() < b.brand.toLowerCase()) {
                 return -1;
@@ -90,7 +84,7 @@ export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElem
         })
     };
 
-    if(sortOptionValue === '5') {
+    if(sortOptionValue === 'upABC') {
         const sorArr = arrDB.sort((a: IProducts, b: IProducts): number => {
             if (a.brand.toLowerCase() < b.brand.toLowerCase()) {
                 return -1;
