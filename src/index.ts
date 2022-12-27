@@ -4,6 +4,7 @@ import { updateItemsCount } from "./utils/updateItemsCount";
 
 //CssImport
 import './style.scss'
+import { checkEmptyStorage } from "./utils/main/checkEmptyStorage";
 
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
@@ -20,5 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if(window.location.pathname === '/') {
         window.location.href = '#/';
     };
+    checkEmptyStorage();
     updateItemsCount();
 });

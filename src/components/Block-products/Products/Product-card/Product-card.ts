@@ -1,5 +1,6 @@
 import { addItemCart } from "../../../../utils/main/addItemCart";
 import { IProducts } from "../../../../utils/interface";
+import { setButtonText } from "../../../../utils/main/setButtonText";
 
 export const createCardProduct = (prod: IProducts) => {
    
@@ -50,7 +51,7 @@ export const createCardProduct = (prod: IProducts) => {
     liDescStock.textContent = `Stock: ${prod.stock}`;
     liDescID.textContent = `${prod.id}`;
     titleProd.textContent = prod.brand;
-    btnCart.textContent = 'Add Cart';
+    btnCart.textContent = setButtonText(prod.id);
     linkDetails.textContent = 'Details';
     
     listDesc.append(liDescCategory, liDescBrand, liDescPrice, liDescDiscount, liDescRating, liDescStock, liDescID);
