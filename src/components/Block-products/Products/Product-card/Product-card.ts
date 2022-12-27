@@ -1,5 +1,6 @@
 import { addItemCart } from "../../../../utils/main/addItemCart";
 import { IProducts } from "../../../../utils/interface";
+import { addClassListElem } from "../../../../utils/addUrlParams";
 import { setButtonText } from "../../../../utils/main/setButtonText";
 
 export const createCardProduct = (prod: IProducts) => {
@@ -39,18 +40,18 @@ export const createCardProduct = (prod: IProducts) => {
     linkDetails.classList.add('products-btn__item');
 
     linkProd.setAttribute('href', `#/products/${prod.id}`);
-    imgProd.src = prod.thumbnail;
+    imgProd.src = `${prod.thumbnail}`;
     imgProd.alt = 'card-product';
     linkDetails.setAttribute('href', `#/products/${prod.id}`);
 
-    liDescCategory.textContent = `Category: ${prod.category}`;
-    liDescBrand.textContent = `Brand: ${prod.brand}`;
+    liDescCategory.textContent = `Category: ${prod.category.toUpperCase()}`;
+    liDescBrand.textContent = `Brand: ${prod.brand.toUpperCase()}`;
     liDescPrice.textContent = `Price: ${prod.price}$`;
     liDescDiscount.textContent = `Discount: ${prod.discountPercentage}%`;
     liDescRating.textContent = `Rating: ${prod.rating}`;
     liDescStock.textContent = `Stock: ${prod.stock}`;
     liDescID.textContent = `${prod.id}`;
-    titleProd.textContent = prod.brand;
+    titleProd.textContent = prod.title.toUpperCase();
     btnCart.textContent = setButtonText(prod.id);
     linkDetails.textContent = 'Details';
     
@@ -61,5 +62,7 @@ export const createCardProduct = (prod: IProducts) => {
 
     btnCart.addEventListener('click', addItemCart);
 
-    return divProd
+    addClassListElem(listDesc)
+
+    return  divProd
 }
