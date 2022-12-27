@@ -14,7 +14,6 @@ rootHeader.append(createBlockNavigation());
 
 
 
-// addRouter(window.location.hash || '#/');
 
 window.addEventListener('hashchange', () => {
     const hash: string = window.location.hash;  
@@ -22,6 +21,7 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {    
+    addRouter(window.location.hash || '#/');
     if(window.location.pathname === '/') {
         window.location.href = '#/';
     };

@@ -32,7 +32,7 @@ export const addNavigate = () => {
     nav.append(ul);
 
     linkMain.addEventListener('click', () => {
-        localStorage.clear();
+        // localStorage.clear();
         createWrapperAllProducts();
         // window.location.reload();
     });
