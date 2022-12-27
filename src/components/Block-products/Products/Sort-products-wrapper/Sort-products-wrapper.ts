@@ -1,26 +1,64 @@
 
 export const createSortWrapper = () => {
 
-    const divSortWrapper = document.createElement('div');
+    const divSortWrapper: HTMLDivElement = document.createElement('div');
     divSortWrapper.classList.add('products-sort');
 
-    const btnSmall = document.createElement('button');
-    const btnBig = document.createElement('button');
-
+    const divBlockSmallBig: HTMLDivElement = document.createElement('div');
+    divBlockSmallBig.classList.add('products-sort__small-big');
+    const btnSmall: HTMLButtonElement = document.createElement('button');
+    const btnBig: HTMLButtonElement = document.createElement('button');
     btnSmall.classList.add('btn-small');
     btnBig.classList.add('btn-big');
-
     btnSmall.textContent = 'SMALL';
     btnBig.textContent = 'BIG';
 
-    divSortWrapper.textContent = 'Блок  различные виды сортировки';
+    const divSearch: HTMLDivElement = document.createElement('div');
+    divSearch.classList.add('block-search');
+    const input: HTMLInputElement = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'search';
+    input.classList.add('search');
 
-    divSortWrapper.append(btnSmall, btnBig)
+    const divSelect: HTMLDivElement = document.createElement('div');
+    divSelect.classList.add('block-select');
+    const select: HTMLSelectElement = document.createElement('select');
+    const option1: HTMLOptionElement = document.createElement('option');
+    const option2: HTMLOptionElement = document.createElement('option');
+    const option3: HTMLOptionElement = document.createElement('option');
+    const option4: HTMLOptionElement = document.createElement('option');
+    const option5: HTMLOptionElement = document.createElement('option');
+    select.classList.add('sort')
+    option1.value = 'noSort';
+    option2.value = 'upPrice';
+    option3.value = 'downPrice';
+    option4.value = 'downABC';
+    option5.value = 'upABC';
+    option1.textContent = 'Без сортировки';
+    option2.textContent = 'От меньшей price к большей';
+    option3.textContent = 'От большей price к меньшей';
+    option4.textContent = 'По алфавиту brand вниз';
+    option5.textContent = 'По алфавиту brand вверх';
+    select.append(option1,option2,option3,option4,option5);
+
+    const divCountProd: HTMLDivElement = document.createElement('div');
+    divCountProd.classList.add('block__count-prod');
+    const count: HTMLSpanElement = document.createElement('span');
+
+    divCountProd.append(count)
+    divSelect.append(select);
+    divSearch.append(input);
+    divBlockSmallBig.append(btnSmall, btnBig)
+
+    divSortWrapper.append(divSearch, divBlockSmallBig, divCountProd, divSelect);
 
     return  {
         divSortWrapper,
         btnSmall,
-        btnBig
+        btnBig,
+        input,
+        select,
+        count
     }
 
 }
