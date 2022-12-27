@@ -15,6 +15,7 @@ export const createCardProduct = (prod: IProducts) => {
     const liDescDiscount: HTMLLIElement = document.createElement('li');
     const liDescRating: HTMLLIElement = document.createElement('li');
     const liDescStock: HTMLLIElement = document.createElement('li');
+    const liDescID: HTMLLIElement = document.createElement('li');
 
     const divBtns: HTMLDivElement = document.createElement('div');
     const btnCart: HTMLButtonElement = document.createElement('button');
@@ -31,6 +32,7 @@ export const createCardProduct = (prod: IProducts) => {
     liDescDiscount.classList.add('card-desc__item');
     liDescRating.classList.add('card-desc__item');
     liDescStock.classList.add('card-desc__item');
+    liDescID.classList.add('card-desc__item_ID');
     divBtns.classList.add('products-btns');
     btnCart.classList.add('products-btn__item');
     linkDetails.classList.add('products-btn__item');
@@ -46,11 +48,12 @@ export const createCardProduct = (prod: IProducts) => {
     liDescDiscount.textContent = `Discount: ${prod.discountPercentage}%`;
     liDescRating.textContent = `Rating: ${prod.rating}`;
     liDescStock.textContent = `Stock: ${prod.stock}`;
+    liDescID.textContent = `${prod.id}`;
     titleProd.textContent = prod.brand;
     btnCart.textContent = 'Add Cart';
     linkDetails.textContent = 'Details';
     
-    listDesc.append(liDescCategory, liDescBrand, liDescPrice, liDescDiscount, liDescRating, liDescStock);
+    listDesc.append(liDescCategory, liDescBrand, liDescPrice, liDescDiscount, liDescRating, liDescStock, liDescID);
     linkProd.append(titleProd, imgProd, listDesc);
     divBtns.append(btnCart,linkDetails);
     divProd.append(linkProd,divBtns);
