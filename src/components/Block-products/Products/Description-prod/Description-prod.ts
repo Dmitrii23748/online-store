@@ -1,4 +1,5 @@
 import { IProducts } from "../../../../utils/interface";
+import { addItemCart } from "../../../../utils/main/addItemCart";
 
 export const DescriptionProd = (item: IProducts) => {
 
@@ -104,6 +105,8 @@ export const DescriptionProd = (item: IProducts) => {
     ulBread.append(liBread1, liBread2, liBread3, liBread4);
 
     divContainer.append(ulBread, divWrapper);
+
+    btnAddCart.addEventListener('click', addItemCart);
 
     return divContainer;
 }
