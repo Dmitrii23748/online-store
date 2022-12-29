@@ -1,5 +1,5 @@
 import { ICartProducts } from "../interface";
-import { updateItemsCount } from "../updateItemsCount";
+import { updateHeader } from "../updateHeader";
 import { addRouter } from "../../routes/routes";
 
 export function updateCart(target: Event) {
@@ -13,7 +13,7 @@ export function updateCart(target: Event) {
     increaseAmount(id, currentItems);
   }
 
-  updateItemsCount();
+  updateHeader();
   const hash: string = window.location.hash;
   addRouter(hash); 
 }

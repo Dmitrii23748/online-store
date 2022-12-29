@@ -1,6 +1,6 @@
 import { addRouter } from "./routes/routes";
 import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
-import { updateItemsCount } from "./utils/updateItemsCount";
+import { updateHeader } from "./utils/updateHeader";
 
 //CssImport
 import './style.scss'
@@ -23,5 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
     if(window.location.pathname === '/') {
         window.location.href = '#/';
     };
-    updateItemsCount();
+    updateHeader();
 });
