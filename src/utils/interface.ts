@@ -30,3 +30,7 @@ export interface IDB {
     thumbnail: string;
     images: string[];
 }
+
+export interface ICartProducts extends IProducts {
+  count: number;
+}

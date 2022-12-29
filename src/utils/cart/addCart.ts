@@ -1,8 +1,8 @@
 import { addCartInfo } from "./addCartInfo";
-import { IDB, IProducts } from "../interface";
+import { ICartProducts } from "../interface";
 import { addCartInner } from "./addCartInner";
 
-export const addCart = (items: Array<IProducts>): Array<HTMLElement> => {
+export const addCart = (items: Array<ICartProducts>): Array<HTMLElement> => {
   const cartInfo: HTMLElement = document.createElement('div');
   const cartInner: HTMLElement = document.createElement('div');
   cartInfo.classList.add('cart-info')

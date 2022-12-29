@@ -1,5 +1,7 @@
-import { IProducts } from "../interface";
-export function addCartInner(node: HTMLElement, items: Array<IProducts>):void  {
+import { ICartProducts, IProducts } from "../interface";
+import { updateCart } from "./updateCart";
+
+export function addCartInner(node: HTMLElement, items: Array<ICartProducts>):void  {
   const length: number = items.length;
 
   for (let i = 0; i < length; i++) {
@@ -67,7 +69,7 @@ function createDescription(i: number, items: Array<IProducts>): HTMLElement {
   return desc
 }
 
-function createControls(i: number, items: Array<IProducts>): HTMLElement {
+function createControls(i: number, items: Array<ICartProducts>): HTMLElement {
   const controls = document.createElement('div');
   controls.classList.add('item__controls');
 
@@ -80,15 +82,21 @@ function createControls(i: number, items: Array<IProducts>): HTMLElement {
 
   let leftBtn = document.createElement('button');
   leftBtn.classList.add('item__controls__buttons_left');
+  leftBtn.addEventListener('click', updateCart);
   
   let rightBtn = document.createElement('button');
   rightBtn.classList.add('item__controls__buttons_right');
+  rightBtn.addEventListener('click', updateCart);
 
   let itemsCount = document.createElement('span');
   itemsCount.classList.add('item__controls__count');
-  itemsCount.innerText = `1`;
+  itemsCount.innerText = `${items[i].count}`;
 
-  btnsWrapper.append(leftBtn, itemsCount, rightBtn);
+  let itemID = document.createElement('span');
+  itemID.classList.add('card-desc__item_ID');
+  itemID.innerText = `${items[i].id}`;
+
+  btnsWrapper.append(leftBtn, itemsCount, rightBtn, itemID);
 
   let price = document.createElement('p');
   price.classList.add('item__controls__price');

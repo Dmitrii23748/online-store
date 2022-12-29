@@ -27,7 +27,8 @@ function calculateID(el: HTMLElement): number {
 
 function pushInStorage(item: IProducts): void {
   const currentItems = JSON.parse(window.localStorage.getItem('itemList') as string) as Array<IProducts>;
-  currentItems.push(item)
+  let newItem = {...item, count: 1};
+  currentItems.push(newItem);
   window.localStorage.setItem('itemList', JSON.stringify(currentItems));
   updateItemsCount();
 }

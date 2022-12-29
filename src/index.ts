@@ -13,10 +13,8 @@ export const page = document.querySelector('.page') as HTMLElement;
 rootHeader.append(createBlockNavigation());
 
 
-
-
 window.addEventListener('hashchange', () => {
-    const hash: string = window.location.hash;  
+    const hash: string = window.location.hash;
     addRouter(hash); 
 });
 
