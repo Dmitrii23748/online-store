@@ -1,10 +1,13 @@
 import { ICartProducts, IProducts } from "../interface";
 import { updateCart } from "./updateCart";
 
-export function addCartInner(node: HTMLElement, items: Array<ICartProducts>):void  {
-  const length: number = items.length;
-
-  for (let i = 0; i < length; i++) {
+export function addCartInner(node: HTMLElement, items: Array<ICartProducts>, page: number):void  {
+  const itemCount = JSON.parse(window.localStorage.getItem('itemsOnPage') as string);
+  const length = items.length;
+  const start: number = (page - 1) * itemCount;
+  let end: number = page * itemCount;
+  if (length < end) end = length;
+  for (let i = start; i < end; i++) {
     const item = document.createElement('div');
     item.classList.add('item');
     
@@ -28,7 +31,7 @@ function createNum(i: number): HTMLElement {
   return num;
 }
 
-function createImage(i: number, items: Array<IProducts>): HTMLElement {
+function createImage(i: number, items: Array<ICartProducts>): HTMLElement {
     const img = document.createElement('div');
     img.classList.add('item__img-container');
 
