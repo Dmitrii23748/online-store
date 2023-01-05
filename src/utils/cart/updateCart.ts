@@ -12,7 +12,7 @@ export function updateCart(target: Event) {
   } else if ((node.className === 'item__controls__buttons_right')){
     increaseAmount(id, currentItems);
   }
-
+  checkPages();
   updateHeader();
   const hash: string = window.location.hash;
   addRouter(hash); 
@@ -47,4 +47,17 @@ function decreaseAmount(id: number, currentItems: Array<ICartProducts>): void {
 function increaseAmount(id: number, currentItems: Array<ICartProducts>): void {
   currentItems[id].count += 1;
   window.localStorage.setItem('itemList', JSON.stringify(currentItems));
+}
+
+function checkPages(): void {
+  const itemCount = JSON.parse(window.localStorage.getItem('itemsOnPage') as string);
+  const page = JSON.parse(window.localStorage.getItem('currentPage') as string);
+  const items: Array<ICartProducts> = JSON.parse(window.localStorage.getItem('itemList') as string);
+  const length = items.length;
+  const start: number = (page - 1) * itemCount;
+  if (start >= length) {
+    const newPage = page - 1;
+    window.localStorage.setItem('currentPage', newPage.toString());
+    console.log('bing')
+  }
 }
