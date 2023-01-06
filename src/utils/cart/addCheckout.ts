@@ -1,4 +1,5 @@
 import { ICartProducts, IProducts } from "../interface";
+import { addModal } from "../modal/addModal";
 import { checkPromo } from "./promoCheck";
 
 export function addCheckout(items: Array<ICartProducts>): Array<HTMLElement> {
@@ -38,6 +39,7 @@ function addCheckoutBody(items: Array<ICartProducts>): HTMLElement {
   checkoutButton.type = 'button';
   checkoutButton.value = 'Buy now';
   checkoutButton.classList.add('checkout__button');
+  checkoutButton.addEventListener('click', addModal);
 
   checkoutBody.append(checkoutProducts, checkoutTotal, checkoutPromo, checkoutButton)
   return checkoutBody
