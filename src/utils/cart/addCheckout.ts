@@ -1,4 +1,5 @@
 import { ICartProducts, IProducts } from "../interface";
+import { checkPromo } from "./promoCheck";
 
 export function addCheckout(items: Array<ICartProducts>): Array<HTMLElement> {
     return [addCheckoutTitle(), addCheckoutBody(items)]
@@ -31,6 +32,7 @@ function addCheckoutBody(items: Array<ICartProducts>): HTMLElement {
   checkoutPromo.type = 'text';
   checkoutPromo.placeholder = 'Enter promo code';
   checkoutPromo.classList.add('checkout__promo');
+  checkoutPromo.addEventListener('input', checkPromo);
 
   const checkoutButton = document.createElement('input')
   checkoutButton.type = 'button';

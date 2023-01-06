@@ -1,4 +1,3 @@
-import { checkEmpty } from "../../utils/cart/checkEmpty";
 import { addCart } from "../../utils/cart/addCart";
 import { ICartProducts } from "../../utils/interface";
 import { addCheckout } from "../../utils/cart/addCheckout";
@@ -8,7 +7,7 @@ export const addCartPage = (): HTMLElement => {
   wrapperCart.classList.add('wrapper_cart')
 
   const items: Array<ICartProducts> = JSON.parse(window.localStorage.getItem('itemList') as string);
-  if (checkEmpty(items)) {
+  if (items.length === 0) {
     wrapperCart.textContent = 'Cart is empty';
     return wrapperCart;
   }

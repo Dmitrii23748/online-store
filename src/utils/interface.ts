@@ -17,7 +17,7 @@ export interface IDB {
     limit: number;
   };
 
-  export interface IProducts {
+export interface IProducts {
     id: number;
     title: string;
     description: string;
@@ -33,4 +33,8 @@ export interface IDB {
 
 export interface ICartProducts extends IProducts {
   count: number;
+}
+
+export interface IPromo {
+  [key: string]: string;
 }
