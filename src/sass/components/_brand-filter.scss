@@ -1,0 +1,22 @@
+.brand {
+    margin-bottom: 30px;
+}
+
+.brand__title {
+    margin: 10px 0;
+    font-size: 33px;
+}
+
+.brand__list {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.brand__label {
+    display: flex;
+    align-items: center;
+}
+
+.brand__input {
+    margin-right: 5px;
+}

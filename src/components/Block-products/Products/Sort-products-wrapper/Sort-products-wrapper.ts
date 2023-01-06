@@ -34,16 +34,17 @@ export const createSortWrapper = () => {
     option3.value = 'downPrice';
     option4.value = 'downABC';
     option5.value = 'upABC';
-    option1.textContent = 'Без сортировки';
-    option2.textContent = 'От меньшей price к большей';
-    option3.textContent = 'От большей price к меньшей';
-    option4.textContent = 'По алфавиту brand вниз';
-    option5.textContent = 'По алфавиту brand вверх';
+    option1.textContent = 'NO SORT';
+    option2.textContent = 'Sort by price ASC';
+    option3.textContent = 'Sort by price DESC';
+    option4.textContent = 'Sort by brand ASC';
+    option5.textContent = 'Sort by brand DESC';
     select.append(option1,option2,option3,option4,option5);
 
     const divCountProd: HTMLDivElement = document.createElement('div');
     divCountProd.classList.add('block__count-prod');
     const count: HTMLSpanElement = document.createElement('span');
+    count.classList.add('span-couter-products')
 
     divCountProd.append(count)
     divSelect.append(select);

@@ -16,7 +16,7 @@ export const createWrapperAllProducts = () => {
     const db: IProducts[] = createArr();
  
     const sortWrapper = createSortWrapper();
-    const allProducts = createAllProducts(db);    
+    const allProducts = createAllProducts(db);        
 
     sortWrapper.count.innerText = `Products: ${db.length}`;
 

@@ -1,0 +1,22 @@
+.category {
+    margin-bottom: 30px;
+}
+
+.category__title {
+    margin: 10px 0;
+    font-size: 33px;
+}
+
+.category__list {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.category__label {
+    display: flex;
+    align-items: center;
+}
+
+.category__input {
+    margin-right: 5px;
+}
