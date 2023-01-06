@@ -1,0 +1,29 @@
+.btnsClearCopy {
+    padding: 30px;
+}
+
+.btnsClearCopy__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn__clear,
+.btn__copy {
+    background-color: rgb(168, 106, 234);
+    color: #fff;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.btn__clear:hover,
+.btn__copy:hover {
+    background-color: rgb(48, 5, 94);
+}
+
+.btn__clear {
+    margin-right: 10px;
+}

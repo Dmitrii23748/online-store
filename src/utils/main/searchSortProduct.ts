@@ -6,11 +6,24 @@ export const createArr = () => {
     return arr;
 }
 
-export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arrDB:IProducts[], htmlAddProdFunc: any, htmlElemSort: any) => {
+export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arrDB:IProducts[], htmlAddProdFunc: (prod: IProducts) => HTMLDivElement, htmlElemSort: {
+    divSortWrapper: HTMLDivElement;
+    btnSmall: HTMLButtonElement;
+    btnBig: HTMLButtonElement;
+    input: HTMLInputElement;
+    select: HTMLSelectElement;
+    count: HTMLSpanElement;
+}) => {
+
     localStorage.setItem('valueInput',`${value}`);
     let strStorage = localStorage.getItem('valueInput')!.toLowerCase();
     htmlElemProducts.innerHTML = '';
     let arrLocal: IProducts[] = [];
+
+    let arrSearch: IProducts[] = JSON.parse(localStorage.getItem('arrSearch')!);
+    // if(arrSearch.length > 0) {
+    //     arrDB = [...arrSearch];
+    // }
 
     arrDB.forEach((item) => {           
         if((item.brand.toLowerCase().includes(strStorage) ||
@@ -33,10 +46,11 @@ export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arr
         htmlElemProducts.textContent = 'No products';
     };
     htmlElemSort.count.innerText = `Products: ${[...htmlElemProducts.childNodes].length}`;
+
 };
 
 
-export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElement, arrDB: IProducts[], htmlAddProdFunc: any) => {
+export const sortProducts = (sortOptionValue: string, htmlElemProducts: HTMLElement, arrDB: IProducts[], htmlAddProdFunc: (prod: IProducts) => HTMLDivElement) => {
     htmlElemProducts.innerHTML = '';
     let arrSearch: IProducts[] = JSON.parse(localStorage.getItem('arrSearch')!);
     

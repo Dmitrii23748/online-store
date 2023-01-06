@@ -8,22 +8,32 @@ import './style.scss'
 
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
+export const footer = document.querySelector('.footer');
 
 
 rootHeader.append(createBlockNavigation());
 
-
-
+const hashLOcalStorage = localStorage.getItem('routerPath');
 
 window.addEventListener('hashchange', () => {
-    const hash: string = window.location.hash;  
+    const hash: string = window.location.hash;      
     addRouter(hash); 
 });
 
-window.addEventListener('DOMContentLoaded', () => {    
+window.addEventListener('DOMContentLoaded', () => {   
+    localStorage.setItem('routerPath', '#/');
     addRouter(window.location.hash || '#/');
-    if(window.location.pathname === '/') {
-        window.location.href = '#/';
-    };
+    if(hashLOcalStorage === null) {
+        if(window.location.pathname === '/') {
+            window.location.href = '#/';
+        };
+    } else {
+        window.location.href = `${hashLOcalStorage}`;
+    }
     updateItemsCount();
 });
+
+
+
+
+// localStorage.setItem('arrSearch', JSON.stringify(db.products));
