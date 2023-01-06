@@ -58,6 +58,5 @@ function checkPages(): void {
   if (start >= length) {
     const newPage = page - 1;
     window.localStorage.setItem('currentPage', newPage.toString());
-    console.log('bing')
   }
 }

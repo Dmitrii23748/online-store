@@ -1,7 +1,7 @@
-import { IProducts } from "../interface";
+import { ICartProducts } from "../interface";
 import { addRouter } from "../../routes/routes";
 
-export function createItemsNumber(items: Array<IProducts>): HTMLElement {
+export function createItemsNumber(): HTMLElement {
   const limitControllers = document.createElement('div');
   limitControllers.classList.add('pagination__limit')
 
@@ -26,8 +26,14 @@ export function createItemsNumber(items: Array<IProducts>): HTMLElement {
 
 function updateItemsCount(event: Event): void {
   const node = event.target as HTMLInputElement;
-  const value = node.value;
-  window.localStorage.setItem('itemsOnPage', value);
+  const value: number = Number(node.value);
+  window.localStorage.setItem('itemsOnPage', value.toString());
+
+  const items: Array<ICartProducts> = JSON.parse(window.localStorage.getItem('itemList') as string);
+  const page = JSON.parse(window.localStorage.getItem('currentPage') as string);
+  const maxPage = Math.ceil(items.length / value);
+  if (maxPage < page) window.localStorage.setItem('currentPage', maxPage.toString());
+
   const hash: string = window.location.hash;
   addRouter(hash); 
 }

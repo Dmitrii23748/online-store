@@ -11,7 +11,7 @@ export const addCartInfo = (node: HTMLElement, items: Array<IProducts>): void =>
 
   cartTitle.innerText = 'Products In Cart';
 
-  controllers.append(createItemsNumber(items));
+  controllers.append(createItemsNumber());
   controllers.append(createPageButtons());
 
   node.append(cartTitle, controllers)
