@@ -15,9 +15,17 @@
 @import 'sass/components/product-card';
 @import 'sass/components/total-price';
 @import 'sass/components/description-prod';
+@import 'sass/components/brand-filter';
+@import 'sass/components/category-filter';
+@import 'sass/components/price-filter';
+@import 'sass/components/stock-filter';
+@import 'sass/components/btns-filter-copy-clear';
+@import 'sass/components/wrapper-filters';
+@import 'sass/components/footer';
 
 //Pages
 @import 'sass/pages/cart.scss';
 
 //Modal
 @import 'sass/components/modal';
+@import 'sass/pages/404_page.scss';

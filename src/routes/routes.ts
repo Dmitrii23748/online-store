@@ -12,6 +12,8 @@ export const addRouter = (route: string) => {
     page.innerHTML = '';
 
     // addUrlLocal();
+    localStorage.setItem('routerPath', route);
+    
 
     let tableLoc = localStorage.getItem('table') || '';
     switch (route) {
