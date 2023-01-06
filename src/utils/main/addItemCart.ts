@@ -2,7 +2,7 @@ import { db } from "../../db";
 import { checkItemInStorage } from "../cart/checkItemInStorage";
 import { deleteFromStorage } from "../cart/deleteFromStorage";
 import { IProducts } from "../interface";
-import { updateItemsCount } from "../updateItemsCount";
+import { updateHeader } from "../updateHeader";
 import { changeButton } from "./changeButton";
 
 export const addItemCart = (event: Event) => {
@@ -27,7 +27,8 @@ function calculateID(el: HTMLElement): number {
 
 function pushInStorage(item: IProducts): void {
   const currentItems = JSON.parse(window.localStorage.getItem('itemList') as string) as Array<IProducts>;
-  currentItems.push(item)
+  let newItem = {...item, count: 1};
+  currentItems.push(newItem);
   window.localStorage.setItem('itemList', JSON.stringify(currentItems));
-  updateItemsCount();
+  updateHeader();
 }

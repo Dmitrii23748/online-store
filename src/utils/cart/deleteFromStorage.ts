@@ -1,12 +1,12 @@
 import { IProducts } from "../interface";
-import { updateItemsCount } from "../updateItemsCount";
+import { updateHeader } from "../updateHeader";
 
 export function deleteFromStorage(id: number): void {
   const currentItems = JSON.parse(window.localStorage.getItem('itemList') as string);
   const target = findItemInStorage(id, currentItems);
   currentItems.splice(target, 1);
   window.localStorage.setItem('itemList', JSON.stringify(currentItems));
-  updateItemsCount();
+  updateHeader();
 }
 
 function findItemInStorage(id:number, items: Array<IProducts>): number {

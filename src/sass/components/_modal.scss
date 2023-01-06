@@ -1,0 +1,36 @@
+.modalform__body {
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalform__title {
+  font-size: 20px;
+  color: aqua;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.modalform__field {
+  background-color: azure;
+  padding: 5px;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: none;
+}
+
+.modalform__button {
+  width: 50%;
+  border: none;
+  background-color: aquamarine;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  margin-top: 10px;
+}

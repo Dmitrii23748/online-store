@@ -6,6 +6,7 @@
 @import 'sass/layouts/products-wrapper';
 @import 'sass/layouts/sort-products-wrapper';
 @import 'sass/layouts/cart-wrappers';
+@import 'sass/layouts/modal-wrapper';
 
 //Main components
 @import 'sass/components/all-products';
@@ -24,8 +25,7 @@
 
 //Pages
 @import 'sass/pages/cart.scss';
+
+//Modal
+@import 'sass/components/modal';
 @import 'sass/pages/404_page.scss';
-
-
-
-

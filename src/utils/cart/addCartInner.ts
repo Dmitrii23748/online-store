@@ -1,8 +1,16 @@
-import { IProducts } from "../interface";
-export function addCartInner(node: HTMLElement, items: Array<IProducts>):void  {
-  const length: number = items.length;
+import { ICartProducts, IProducts } from "../interface";
+import { changePage } from "./changePage";
+import { updateCart } from "./updateCart";
 
-  for (let i = 0; i < length; i++) {
+export function addCartInner(node: HTMLElement, items: Array<ICartProducts>, page: number):void  {
+  const itemCount = JSON.parse(window.localStorage.getItem('itemsOnPage') as string);
+  const length = items.length;
+  const start: number = (page - 1) * itemCount;
+
+  let end: number = page * itemCount;
+
+  if (length < end) end = length;
+  for (let i = start; i < end; i++) {
     const item = document.createElement('div');
     item.classList.add('item');
     
@@ -26,7 +34,7 @@ function createNum(i: number): HTMLElement {
   return num;
 }
 
-function createImage(i: number, items: Array<IProducts>): HTMLElement {
+function createImage(i: number, items: Array<ICartProducts>): HTMLElement {
     const img = document.createElement('div');
     img.classList.add('item__img-container');
 
@@ -67,7 +75,7 @@ function createDescription(i: number, items: Array<IProducts>): HTMLElement {
   return desc
 }
 
-function createControls(i: number, items: Array<IProducts>): HTMLElement {
+function createControls(i: number, items: Array<ICartProducts>): HTMLElement {
   const controls = document.createElement('div');
   controls.classList.add('item__controls');
 
@@ -80,15 +88,21 @@ function createControls(i: number, items: Array<IProducts>): HTMLElement {
 
   let leftBtn = document.createElement('button');
   leftBtn.classList.add('item__controls__buttons_left');
+  leftBtn.addEventListener('click', updateCart);
   
   let rightBtn = document.createElement('button');
   rightBtn.classList.add('item__controls__buttons_right');
+  rightBtn.addEventListener('click', updateCart);
 
   let itemsCount = document.createElement('span');
   itemsCount.classList.add('item__controls__count');
-  itemsCount.innerText = `1`;
+  itemsCount.innerText = `${items[i].count}`;
 
-  btnsWrapper.append(leftBtn, itemsCount, rightBtn);
+  let itemID = document.createElement('span');
+  itemID.classList.add('card-desc__item_ID');
+  itemID.innerText = `${items[i].id}`;
+
+  btnsWrapper.append(leftBtn, itemsCount, rightBtn, itemID);
 
   let price = document.createElement('p');
   price.classList.add('item__controls__price');

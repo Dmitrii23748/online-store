@@ -17,7 +17,7 @@ export interface IDB {
     limit: number;
   };
 
-  export interface IProducts {
+export interface IProducts {
     id: number;
     title: string;
     description: string;
@@ -29,4 +29,12 @@ export interface IDB {
     category: string;
     thumbnail: string;
     images: string[];
+}
+
+export interface ICartProducts extends IProducts {
+  count: number;
+}
+
+export interface IPromo {
+  [key: string]: string;
 }

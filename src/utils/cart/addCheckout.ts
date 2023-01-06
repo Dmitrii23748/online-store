@@ -1,6 +1,8 @@
-import { IProducts } from "../interface";
+import { ICartProducts, IProducts } from "../interface";
+import { addModal } from "../modal/addModal";
+import { checkPromo } from "./promoCheck";
 
-export function addCheckout(items: Array<IProducts>): Array<HTMLElement> {
+export function addCheckout(items: Array<ICartProducts>): Array<HTMLElement> {
     return [addCheckoutTitle(), addCheckoutBody(items)]
 }
 
@@ -15,7 +17,7 @@ function addCheckoutTitle(): HTMLElement {
   return checkoutTitle;
 }
 
-function addCheckoutBody(items: Array<IProducts>): HTMLElement {
+function addCheckoutBody(items: Array<ICartProducts>): HTMLElement {
   const checkoutBody = document.createElement('div');
   checkoutBody.classList.add('checkout__body');
 
@@ -25,17 +27,19 @@ function addCheckoutBody(items: Array<IProducts>): HTMLElement {
 
   const checkoutTotal = document.createElement('p');
   checkoutTotal.classList.add('checkout__total');
-  checkoutTotal.innerText = `Total: ${items.reduce((acc, item) => acc + item.price, 0)}$`;
+  checkoutTotal.innerText = `Total: ${items.reduce((acc, item) => acc + item.price * item.count, 0)}$`;
 
   const checkoutPromo = document.createElement('input')
   checkoutPromo.type = 'text';
   checkoutPromo.placeholder = 'Enter promo code';
   checkoutPromo.classList.add('checkout__promo');
+  checkoutPromo.addEventListener('input', checkPromo);
 
   const checkoutButton = document.createElement('input')
   checkoutButton.type = 'button';
   checkoutButton.value = 'Buy now';
   checkoutButton.classList.add('checkout__button');
+  checkoutButton.addEventListener('click', addModal);
 
   checkoutBody.append(checkoutProducts, checkoutTotal, checkoutPromo, checkoutButton)
   return checkoutBody
