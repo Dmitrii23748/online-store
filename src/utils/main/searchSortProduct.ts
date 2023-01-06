@@ -35,7 +35,6 @@ export const searchProducts = (value: string, htmlElemProducts: HTMLElement, arr
             String(item.discountPercentage).toLowerCase().includes(strStorage)) {
                 htmlElemProducts.append(htmlAddProdFunc(item));
                 arrLocal.push(item);
-                
         } 
     }); 
 

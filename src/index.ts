@@ -8,7 +8,6 @@ import './style.scss'
 
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
-export const footer = document.querySelector('.footer');
 
 
 rootHeader.append(createBlockNavigation());
