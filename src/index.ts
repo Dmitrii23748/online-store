@@ -1,10 +1,10 @@
 import { addRouter } from "./routes/routes";
 import { createBlockNavigation } from "./components/Block-navigation/Block-navigation";
 import { updateItemsCount } from "./utils/updateItemsCount";
+import { updateHeader } from "./utils/updateHeader";
 
 //CssImport
 import './style.scss'
-
 
 export const rootHeader = document.querySelector('.header') as HTMLElement;
 export const page = document.querySelector('.page') as HTMLElement;
@@ -22,6 +22,7 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('DOMContentLoaded', () => {   
     localStorage.setItem('routerPath', '#/');
+
     addRouter(window.location.hash || '#/');
     if(hashLOcalStorage === null) {
         if(window.location.pathname === '/') {
@@ -30,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         window.location.href = `${hashLOcalStorage}`;
     }
+    updateHeader();
     updateItemsCount();
 });
 
