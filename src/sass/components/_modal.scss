@@ -11,7 +11,7 @@
 
 .modalform__title {
   font-size: 20px;
-  color: aqua;
+  color: black;
   font-weight: 500;
   margin-top: 10px;
 }
@@ -23,9 +23,13 @@
   border-radius: 5px;
   margin-top: 5px;
   border: none;
+  &:invalid {
+    border: 1px solid red;
+  }
 }
 
 .modalform__button {
+  transition: all 0.3s ease-in;
   width: 50%;
   border: none;
   background-color: aquamarine;
@@ -33,4 +37,17 @@
   color: black;
   border-radius: 5px;
   margin-top: 10px;
+  &:hover {
+    box-shadow: 7px -5px 2px #ce5937;
+  }
+}
+
+.modalform__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 20px;
 }
