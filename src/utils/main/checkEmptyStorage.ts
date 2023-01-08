@@ -16,4 +16,9 @@ export function checkEmptyStorage() {
     const promoJSON = JSON.stringify(Promocodes);
     window.localStorage.setItem('promocodes', promoJSON);
   }
+
+  const usedPromo = JSON.parse(window.localStorage.getItem('usedPromo') as string);
+  if (usedPromo == null) {
+    window.localStorage.setItem('usedPromo', '[]');
+  }
 }
