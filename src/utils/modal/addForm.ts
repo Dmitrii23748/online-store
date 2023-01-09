@@ -1,5 +1,6 @@
 import { addRouter } from "../../routes/routes";
 import { updateHeader } from "../updateHeader";
+import { checkCard } from "./checkCard";
 
 export function addModalForm(): HTMLElement {
   const Form = document.createElement('form');
@@ -128,6 +129,7 @@ function createCardNumberField(): HTMLElement {
   block.oninput = (e: Event) => {
     const target = e.target as HTMLInputElement;
     target.setCustomValidity("");
+    checkCard(target.value);
   }
 
   return block;
