@@ -14,6 +14,7 @@ export function createItemsNumber(): HTMLElement {
   itemsController.type = 'number';
   itemsController.min = '1';
   itemsController.max = '5';
+  itemsController.addEventListener('input', checkInput);
 
   const itemsOnPage = JSON.parse(window.localStorage.getItem('itemsOnPage') as string);
   itemsController.value = itemsOnPage;
@@ -36,4 +37,17 @@ function updateItemsCount(event: Event): void {
 
   const hash: string = window.location.hash;
   addRouter(hash); 
+}
+
+function checkInput(e: Event):void {
+  const target = e.target as HTMLInputElement;
+  if (+target.value < 1) {
+    target.classList.add('.pagination__limit__controller_error');
+    target.value = '1';
+  }
+  if (+target.value > 5) {
+    target.classList.add('.pagination__limit__controller_error');
+    target.value = '5';
+  }
+  setTimeout((target) => target.classList.remove('.pagination__limit__controller_error'), 2000);
 }

@@ -46,6 +46,9 @@ function decreaseAmount(id: number, currentItems: Array<ICartProducts>): void {
 
 function increaseAmount(id: number, currentItems: Array<ICartProducts>): void {
   currentItems[id].count += 1;
+  if (currentItems[id].count > currentItems[id].stock) {
+    currentItems[id].count = currentItems[id].stock;
+  }
   window.localStorage.setItem('itemList', JSON.stringify(currentItems));
 }
 
