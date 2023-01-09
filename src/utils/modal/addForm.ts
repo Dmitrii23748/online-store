@@ -150,6 +150,7 @@ function createDateField(): HTMLElement {
   block.oninput = (e: Event) => {
     const target = e.target as HTMLInputElement;
     target.setCustomValidity("");
+    target.value = addSlasher(target.value);
   }
 
   return block;
@@ -194,4 +195,12 @@ function finishCart():void {
     updateHeader();
     window.location.href = "#/";
   }, 5000)
+}
+
+function addSlasher(date: string): string {
+  if (date.length > 2) {
+    const str: string = date;
+    return (str.slice(0, 2) + '/' + str.slice(3));
+  }
+  return date;
 }
