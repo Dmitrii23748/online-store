@@ -1,9 +1,9 @@
 import { IPromo } from "../interface";
 import { addPromo } from "./promoAdd";
+import { deletePromo } from "./promoDelete";
 
-export function appendPromo(value: string, promocodes: IPromo):void {
-  const body = document.querySelector('.checkout__body');
-
+export function appendPromo(value: string, promocodes: IPromo, node: HTMLElement):void {
+  const usedPromo = JSON.parse(window.localStorage.getItem('usedPromo') as string);
 
   const promoBody = document.createElement('div');
   promoBody.classList.add('promo__body')
@@ -18,9 +18,15 @@ export function appendPromo(value: string, promocodes: IPromo):void {
 
   const promoButton = document.createElement('button');
   promoButton.classList.add('promo__button');
-  promoButton.innerText = 'Add';
-  promoButton.addEventListener('click', addPromo);
+  if (!usedPromo.includes(value)) {
+    promoButton.innerText = 'Add';
+    promoButton.addEventListener('click', addPromo);
+  } else {
+    promoButton.innerText = 'Delete';
+    promoButton.addEventListener('click', deletePromo);
+  }
 
   promoBody.append(promoName, promoPercent, promoButton);
-  body?.append(promoBody);
+  console.log(promoBody)
+  node?.append(promoBody);
 }

@@ -3,6 +3,7 @@
   border-radius: 20px;
   margin-right: 20px;
   overflow: hidden;
+  width: 950px;
 }
 
 .cart-info {
@@ -21,6 +22,9 @@
 .pagination__limit__controller {
   margin-right: 10px;
   width: 30px;
+  &_error {
+    border: 1px solid red;
+  }
 }
 
 .pagination {
@@ -31,14 +35,67 @@
   }
 
   &__controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__btn {
-      &_left, &_right {
-        margin: 0px 5px;
-        height: 15px;
-        width: 15px;
-        background: aqua;
-        border-radius: 5px;
+      &_left {
+        padding: 10px;
+          position: relative;
+          width: 15px;
+          height: 15px;
+          background-color: transparent;
+          border: 1px solid lightblue;
+          border-radius: 50%;
+        &:before {
+          content: '';  
+          width: 15px;
+          height: 1px;
+          border-top: 3px solid lightblue;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 7.5px;
+          left: 2.5px;
+        }
       }
+      &_right {
+        padding: 10px;
+          position: relative;
+          width: 15px;
+          height: 15px;
+          background-color: transparent;
+          border: 1px solid lightblue;
+          border-radius: 50%;
+        &:before {
+          content: '';  
+          width: 15px;
+          height: 1px;
+          border-top: 3px solid lightblue;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 7.5px;
+          left: 2.5px;
+        }
+        &:after {
+          content: '';  
+          width: 1px;
+          height: 15px;
+          border-right: 3px solid lightblue;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 2px;
+          left: 9px;
+        }
+      }
+    }
+    &__pages {
+      margin: 0px 5px;
     }
   }
 }
@@ -112,14 +169,66 @@
     flex-direction: column;
     align-items: center;
     &__buttons {
-      margin: 5px 0px;
-
-      &_left, &_right {
-        width: 15px;
-        height: 15px;
-        background: aqua;
-        border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      &_left {
+        padding: 10px;
+          position: relative;
+          width: 15px;
+          height: 15px;
+          background-color: transparent;
+          border: 1px solid black;
+          border-radius: 50%;
+        &:before {
+          content: '';  
+          width: 15px;
+          height: 1px;
+          border-top: 3px solid black;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 7.5px;
+          left: 2.5px;
+        }
       }
+      &_right {
+        padding: 10px;
+          position: relative;
+          width: 15px;
+          height: 15px;
+          background-color: transparent;
+          border: 1px solid black;
+          border-radius: 50%;
+        &:before {
+          content: '';  
+          width: 15px;
+          height: 1px;
+          border-top: 3px solid black;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 7.5px;
+          left: 2.5px;
+        }
+        &:after {
+          content: '';  
+          width: 1px;
+          height: 15px;
+          border-right: 3px solid black;
+          display: block;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          top: 2px;
+          left: 9px;
+        }
+      }
+    }
+    &__count {
+      margin: 0px 5px;
     }
   }
 }
@@ -159,6 +268,13 @@
     border: 1px solid #435235;
     padding: 5px;
     border-radius: 10px;
+    transition: 0.3s ease-in;
+    &:hover {
+      box-shadow: 7px -5px 2px #ce5937;
+    }
+    &:active {
+      box-shadow: 7px -5px 8px #ce5937;
+    }
   }
 
   &__button {
@@ -167,6 +283,13 @@
     border: 1px solid #435235;
     padding: 5px;
     border-radius: 10px;
+    transition: 0.3s ease-in;
+    &:hover {
+      box-shadow: 7px -5px 2px #ce5937;
+    }
+    &:active {
+      box-shadow: 7px -5px 8px #ce5937;
+    }
   }
 }
 
