@@ -1,6 +1,8 @@
-import { ICartProducts, IProducts } from "../interface";
+import { Promocodes } from "../../components/promocodes";
+import { ICartProducts, IPromo } from "../interface";
 import { addModal } from "../modal/addModal";
 import { checkPromo } from "./promoCheck";
+import { appendPromo } from "./promoAppend";
 
 export function addCheckout(items: Array<ICartProducts>): Array<HTMLElement> {
     return [addCheckoutTitle(), addCheckoutBody(items)]
@@ -34,6 +36,7 @@ function addCheckoutBody(items: Array<ICartProducts>): HTMLElement {
   checkoutPromo.placeholder = 'Enter promo code';
   checkoutPromo.classList.add('checkout__promo');
   checkoutPromo.addEventListener('input', checkPromo);
+  checkUsedPromo(checkoutBody);
 
   const checkoutButton = document.createElement('input')
   checkoutButton.type = 'button';
@@ -43,4 +46,14 @@ function addCheckoutBody(items: Array<ICartProducts>): HTMLElement {
 
   checkoutBody.append(checkoutProducts, checkoutTotal, checkoutPromo, checkoutButton)
   return checkoutBody
+}
+
+function checkUsedPromo(body: HTMLElement):void {
+  const usedPromo = JSON.parse(window.localStorage.getItem('usedPromo') as string);
+  const promocodes: IPromo = JSON.parse(window.localStorage.getItem('promocodes') as string);
+  if (usedPromo.length > 0) {
+    usedPromo.forEach((element: string) => {
+      appendPromo(element, promocodes, body);
+    });
+  }
 }
