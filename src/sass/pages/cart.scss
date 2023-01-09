@@ -3,6 +3,7 @@
   border-radius: 20px;
   margin-right: 20px;
   overflow: hidden;
+  width: 950px;
 }
 
 .cart-info {
@@ -267,6 +268,13 @@
     border: 1px solid #435235;
     padding: 5px;
     border-radius: 10px;
+    transition: 0.3s ease-in;
+    &:hover {
+      box-shadow: 7px -5px 2px #ce5937;
+    }
+    &:active {
+      box-shadow: 7px -5px 8px #ce5937;
+    }
   }
 
   &__button {
@@ -275,6 +283,13 @@
     border: 1px solid #435235;
     padding: 5px;
     border-radius: 10px;
+    transition: 0.3s ease-in;
+    &:hover {
+      box-shadow: 7px -5px 2px #ce5937;
+    }
+    &:active {
+      box-shadow: 7px -5px 8px #ce5937;
+    }
   }
 }
 

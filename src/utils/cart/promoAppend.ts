@@ -4,7 +4,6 @@ import { addPromo } from "./promoAdd";
 export function appendPromo(value: string, promocodes: IPromo):void {
   const body = document.querySelector('.checkout__body');
 
-
   const promoBody = document.createElement('div');
   promoBody.classList.add('promo__body')
 
