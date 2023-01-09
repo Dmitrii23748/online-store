@@ -1,0 +1,34 @@
+//Reset styles
+@import 'sass/base/reset';
+
+//Layouts
+@import 'sass/layouts/filters-wrapper';
+@import 'sass/layouts/products-wrapper';
+@import 'sass/layouts/sort-products-wrapper';
+@import 'sass/layouts/cart-wrappers';
+@import 'sass/layouts/modal-wrapper';
+
+//Main components
+@import 'sass/components/all-products';
+@import 'sass/components/block-navigation';
+@import 'sass/components/navigate';
+@import 'sass/components/product-card';
+@import 'sass/components/total-price';
+@import 'sass/components/description-prod';
+@import 'sass/components/brand-filter';
+@import 'sass/components/category-filter';
+@import 'sass/components/price-filter';
+@import 'sass/components/stock-filter';
+@import 'sass/components/btns-filter-copy-clear';
+@import 'sass/components/wrapper-filters';
+@import 'sass/components/footer';
+
+//Pages
+@import 'sass/pages/cart.scss';
+
+//Modal
+@import 'sass/components/modal';
+@import 'sass/pages/404_page.scss';
+
+//Components
+@import 'sass/components/input-number';

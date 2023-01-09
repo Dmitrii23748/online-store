@@ -1,0 +1,59 @@
+.modalform__body {
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalform__title {
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.modalform__field {
+  background-color: azure;
+  padding: 5px;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: none;
+  &:invalid {
+    border: 1px solid red;
+  }
+}
+
+.modalform__button {
+  transition: all 0.3s ease-in;
+  width: 50%;
+  border: none;
+  background-color: aquamarine;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  margin-top: 10px;
+  &:hover {
+    box-shadow: 7px -5px 2px #ce5937;
+  }
+}
+
+.modalform__card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.modalform__card-image {
+  width: 60px;
+  height: 35px;
+  border-radius: 5px;
+}
